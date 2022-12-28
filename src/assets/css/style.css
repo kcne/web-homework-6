@@ -1,0 +1,76 @@
+
+.nav {
+    margin: 0 20px;
+}
+
+.table-content-heading {
+    padding: 0 10px;
+}
+
+.button-row button {
+    padding: 2px 15px;
+}
+
+.table-secondary {
+    background-color: #f2f3f8;
+}
+
+.pagination-info p {
+    display: inline;
+}
+
+.pagination-info span {
+    font-weight: bold;
+}
+
+.btn-page-active {
+    background-color: blue;
+    color: white;
+    border: none;
+}
+
+.table {
+    width: 100%;
+}
+
+.name-surname-col {
+    width: 40%;
+}
+
+.stud-id-col,
+.dep-col {
+    width: 20%;
+}
+
+@media screen and (max-width: 992px) {
+    .dep-col {
+        display: none;
+    }
+
+    .name-surname-col {
+        width: 50%;
+    }
+
+    .stud-id-col {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .name-surname-col {
+        width: 60%;
+    }
+
+    .stud-id-col {
+        display: none;
+    }
+}
+
+.form-label {
+    margin-bottom: .30rem;
+    margin-top: .20rem;
+}
+
+.modal-title {
+    font-weight: bold;
+}
