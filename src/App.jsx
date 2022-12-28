@@ -235,6 +235,8 @@ function App() {
     },
   ]);
 
+  const [currPage, setPage] = useState(1);
+  const [numItemsPerPage,setNumItemsPP]= useState(8);
 
 
   return (
@@ -245,8 +247,8 @@ function App() {
               <TableHeader />
               <StudentTable
                 studentList={studentList}
-                currentPage={1}
-                numItemsPerPage={8}
+                currentPage={currPage}
+                numItemsPerPage={numItemsPerPage}
                 setStudentList={setStudentList}
               />
               

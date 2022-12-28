@@ -2,12 +2,12 @@ import { useState } from "react";
 import TableRow from "./TableRow";
 import Pagination from "./Pagination";
 const  StudentTable=({studentList, currentPage, numItemsPerPage} )=> {
-    const [studentListState, setStudentList] = useState([]);
     const [currPage, setPage] = useState(currentPage);
-    const setNewPage = (page) => {setPage(page)};
+    const [numberOfItemsPP,setNumItemsPP] = useState(numItemsPerPage);
+    
 
-    const lastItemIndex=currPage*numItemsPerPage;
-    const firstItemIndex=lastItemIndex-numItemsPerPage;
+    const lastItemIndex=currPage*numberOfItemsPP;
+    const firstItemIndex=lastItemIndex-numberOfItemsPP;
     const currentItems=studentList.slice(firstItemIndex, lastItemIndex);
     
     
@@ -28,7 +28,7 @@ const  StudentTable=({studentList, currentPage, numItemsPerPage} )=> {
                     ))} 
                     </tbody>
                 </table>
-                <Pagination numItems={studentList.length} currPage={1} numItemsPerPage={8} setNewPage={setNewPage}/>
+                <Pagination numItems={studentList.length} currPage={currPage} numItemsPerPage={numberOfItemsPP} setPageSize={setNumItemsPP} setNewPage={setPage} firstItemIndex={firstItemIndex} lastItemIndex={lastItemIndex}/>
             </div>
      );
 }
