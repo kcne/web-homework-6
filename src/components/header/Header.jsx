@@ -1,5 +1,6 @@
 import logo from '../../assets/esogu-logo.png';
 function Header() {
+
     return (  
     <div className="nav d-flex justify-content-between">
         <div className="header-logo">
@@ -16,6 +17,7 @@ function Header() {
             <button id="cikis" className="btn btn-dark w-75">Çikiş yap</button>
         </div>
     </div>
+    
     );
 }
 
