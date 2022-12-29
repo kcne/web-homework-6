@@ -9,8 +9,8 @@ import ViewModal from "../modals/ViewModal";
 import DeleteModal from "../modals/DeleteModal";
 
 const  StudentTable=({studentList, currentPage, numItemsPerPage,setStudentList} )=> {
-    const [currPage, setPage] = useState(currentPage);
-    const [numberOfItemsPP,setNumItemsPP] = useState(numItemsPerPage);
+    const [currPage, setPage] = useState(1);
+    const [numberOfItemsPP,setNumItemsPP] = useState(8);
     
 
     const lastItemIndex=currPage*numberOfItemsPP;
@@ -90,7 +90,7 @@ const  StudentTable=({studentList, currentPage, numItemsPerPage,setStudentList} 
                 <AddModal/>
                 <EditModal student={editStudent} show={editModalShow} studentlist={studentList} setstudentlist={setStudentList}  onHide={() => setEditModalShow(false)}/> 
                 <ViewModal student={viewStudent} show={viewModalShow} onHide={() => setViewModalShow(false)}/> 
-                <DeleteModal student={deleteStudent} studentList={studentList} setStudentList={setStudentList} show={deleteModalShow} onHide={() => setDeleteModalShow(false)}/>
+                <DeleteModal student={deleteStudent} studentList={studentList} setStudentList={setStudentList} show={deleteModalShow} onHide={() => setDeleteModalShow(false)} setPage={setPage} numItemsPerPage={numberOfItemsPP} currPage={currPage} />
             
             </div>
             

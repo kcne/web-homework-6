@@ -24,9 +24,13 @@ function DeleteModal(props) {
    const deleteStudent = () => {
     axios.delete('http://localhost:8000/students/'+studId)
     .then((response) => {
+        if(props.studentList.length%props.numItemsPerPage === 1){
+        props.setPage(props.currPage-1);
+        }
         console.log(response);
         props.setStudentList(props.studentList.filter((student) => student.id !== studId));
         props.onHide();
+
     })
     .catch((error) => {
         console.log(error);

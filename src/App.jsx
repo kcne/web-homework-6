@@ -13,10 +13,6 @@ function App() {
 
   const [studentList, setStudentList] = useState([]);
   
-  const [currPage, setPage] = useState(1);
-  const [numItemsPerPage,setNumItemsPP]= useState(8);
-
-  
 
   useEffect(() => {
     axios.get('http://localhost:8000/students')
@@ -39,8 +35,6 @@ function App() {
               <TableHeader studentList={studentList} setStudentList={setStudentList}/>
               <StudentTable
                 studentList={studentList}
-                currentPage={currPage}
-                numItemsPerPage={numItemsPerPage}
                 setStudentList={setStudentList}
               />
 
