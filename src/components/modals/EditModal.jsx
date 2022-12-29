@@ -36,7 +36,7 @@ function EditModal(props) {
   const handleInput = (e) => {
     setStudentInput({ ...studentInput, [e.target.name]: e.target.value });
   };
-  
+
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     event.preventDefault();
@@ -44,7 +44,7 @@ function EditModal(props) {
       event.stopPropagation();
     }
     else{
-    //send post request to server
+    //send put request to server
     const response = axios.put('http://localhost:8000/students/'+ studId, studentInput)
     .then((response) => {
         let newStudentList = props.studentlist.map((student) => {

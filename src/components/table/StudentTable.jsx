@@ -21,15 +21,15 @@ const  StudentTable=({studentList,setStudentList} )=> {
     const [viewModalShow, setViewModalShow] = useState(false);
     const [deleteModalShow, setDeleteModalShow] = useState(false);
    
-    //modal triggers
+    //dont show modals on first render
     const [count, setCount] = useState(0);
 
-    
-
+    //student states
     const [editStudent, setEditStudent] = useState({});
     const [viewStudent, setViewStudent] = useState({});
     const [deleteStudent, setDeleteStudent] = useState({}); 
 
+    //triggers
     const [editTrigger, setEditTrigger] = useState(0);
     const [viewTrigger, setViewTrigger] = useState(0);
     const [deleteTrigger, setDeleteTrigger] = useState(0);

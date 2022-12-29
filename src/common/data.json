@@ -143,33 +143,6 @@
       "dob": "1998-12-02",
       "dept": "1",
       "id": 26
-    },
-    {
-      "fname": "Emin",
-      "lname": "Kocan",
-      "num": "111111111111",
-      "pob": "Eskisehir",
-      "dob": "1998-12-02",
-      "dept": "1",
-      "id": 27
-    },
-    {
-      "fname": "Emin",
-      "lname": "Kocan",
-      "num": "111111111111",
-      "pob": "Assd",
-      "dob": "1223-12-12",
-      "dept": "2",
-      "id": 28
-    },
-    {
-      "id": 29,
-      "fname": "mother",
-      "lname": "fuq",
-      "num": "111111111111",
-      "pob": "Esh",
-      "dob": "1222-12-12",
-      "dept": "2"
     }
   ]
 }

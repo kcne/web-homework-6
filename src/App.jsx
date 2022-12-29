@@ -22,9 +22,6 @@ function App() {
     .catch((error) => {
       console.log(error);
     });
-    // return () => {
-    //   cleanup
-    // };
   }, []);
 
   return (
