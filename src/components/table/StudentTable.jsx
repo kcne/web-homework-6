@@ -1,6 +1,8 @@
 import { useState } from "react";
-import TableRow from "./TableRow";
+// import TableRow from "./TableRow";
 import Pagination from "./Pagination";
+import AddModal from "../modals/AddModal";
+import EditModal from "../modals/EditModal";
 const  StudentTable=({studentList, currentPage, numItemsPerPage} )=> {
     const [currPage, setPage] = useState(currentPage);
     const [numberOfItemsPP,setNumItemsPP] = useState(numItemsPerPage);
@@ -9,8 +11,10 @@ const  StudentTable=({studentList, currentPage, numItemsPerPage} )=> {
     const lastItemIndex=currPage*numberOfItemsPP;
     const firstItemIndex=lastItemIndex-numberOfItemsPP;
     const currentItems=studentList.slice(firstItemIndex, lastItemIndex);
-    
-    
+
+    const [editModalShow, setEditModalShow] = useState(false);
+    const [tempStudent, setTempStudent] = useState({});
+
     
     return ( 
             <div className="table-responsive">
@@ -24,12 +28,25 @@ const  StudentTable=({studentList, currentPage, numItemsPerPage} )=> {
                     </tr>
                     </thead>
                     <tbody>{currentItems.map((student) => ( 
-                        <TableRow key={student.id} student={student} />
+                        <tr key={student.id}>
+                        <td className="name-surname-col">{student.fname+" "+student.lname}</td>
+                        <td className="stud-id-col">{student.num}</td>
+                        <td className="dep-col">{student.dept}</td>
+                        <td className="btns-col button-row d-flex gap-1">
+                            <button className="btn btn-primary btn-sm" >Düzenle</button>
+                            <button className="btn btn-danger btn-sm">Sil</button>
+                            <button className="btn btn-success btn-sm">Yetkiler</button>
+                        </td>
+                    </tr>
                     ))} 
                     </tbody>
                 </table>
                 <Pagination numItems={studentList.length} currPage={currPage} numItemsPerPage={numberOfItemsPP} setPageSize={setNumItemsPP} setNewPage={setPage} firstItemIndex={firstItemIndex} lastItemIndex={lastItemIndex}/>
+                <AddModal/>
+                {/* <EditModal/>  */}
+            
             </div>
+            
      );
 }
 

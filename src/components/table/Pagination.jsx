@@ -35,11 +35,11 @@ function Pagination ({numItems, currPage, setNewPage, numItemsPerPage,firstItemI
             <label className="btn btn-outline-primary" htmlFor="btnradio1">5</label>
 
             <input key={8} type="radio" className="btn-check page-size-radio" name="btnradio" id="btnradio2"
-                onClick={()=>setPageSize(8)} autoComplete="off" defaultChecked />
+                onClick={()=>{setPageSize(8); currPage>=numPages ? setNewPage(1) : {} }} autoComplete="off" defaultChecked />
             <label className="btn btn-outline-primary page-size-radio" htmlFor="btnradio2">8</label>
 
             <input key={10} type="radio" className="btn-check" name="btnradio" id="btnradio3"
-                onClick={()=>setPageSize(10)} autoComplete="off" />
+                onClick={()=>{setPageSize(10) ;currPage>=numPages ? setNewPage(1) : {}}} autoComplete="off" />
             <label className="btn btn-outline-primary" htmlFor="btnradio3">10</label>
         </div>
     </div>
