@@ -12,12 +12,10 @@ function App() {
 
 
   const [studentList, setStudentList] = useState([]);
+  
   const [currPage, setPage] = useState(1);
   const [numItemsPerPage,setNumItemsPP]= useState(8);
 
-  function setStudentListE (newStudentList) {
-    setStudentList(newStudentList);
-  };
   
 
   useEffect(() => {
@@ -31,7 +29,7 @@ function App() {
     // return () => {
     //   cleanup
     // };
-  }, [studentList]);
+  }, []);
 
   return (
     <div className="container-fluid m-1">
@@ -43,7 +41,7 @@ function App() {
                 studentList={studentList}
                 currentPage={currPage}
                 numItemsPerPage={numItemsPerPage}
-                setStudentList={setStudentListE}
+                setStudentList={setStudentList}
               />
 
 

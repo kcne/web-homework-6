@@ -25,6 +25,7 @@ function AddModal(props) {
     if (form.checkValidity() === false) {
       event.stopPropagation();
     }
+    else{
     //send post request to server
     const response = axios.post('http://localhost:8000/students', studentInput)
     .then((response) => {
@@ -37,6 +38,7 @@ function AddModal(props) {
 
     setValidated(true);
     props.onHide();
+    }
   };
   return (
     <>
