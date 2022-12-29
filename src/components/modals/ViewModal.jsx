@@ -8,6 +8,7 @@ function ViewModal(props) {
   const [studentInput, setStudentInput] = useState({
     fname: "",
     lname: "",
+    dept: "",
     num: "",
     pob: "",
     dob: "",
@@ -21,6 +22,7 @@ function ViewModal(props) {
         num: props.student.num,
         pob: props.student.pob,
         dob: props.student.dob,
+        dept: props.student.dept,
     });
     }, [props.student]);
 

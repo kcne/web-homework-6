@@ -49,7 +49,7 @@ function DeleteModal(props) {
                         aria-label="Close" onClick={props.onHide}></button>
                 </div>
                 <div id="deleteModalBody" className="modal-body">
-                    <p id="deleteModalText" className="text-center">{studentInput.fname+" "+ studentInput.lname} Ogrenciyi silmek istediğinize emin misiniz?</p>
+                    <p id="deleteModalText" className="text-center"><b>{studentInput.fname+" "+ studentInput.lname + " "}</b>isimli oğrenciyi siliyorsunuz. Bu işlem geri alınamaz. Devam etmek istediğinize emin misiniz?</p>
                 </div>
                 <div className="modal-footer">
                     <button id="delete-button-close" type="button" className="btn btn-secondary"

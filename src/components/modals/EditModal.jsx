@@ -36,7 +36,7 @@ function EditModal(props) {
   const handleInput = (e) => {
     setStudentInput({ ...studentInput, [e.target.name]: e.target.value });
   };
-
+  
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     event.preventDefault();

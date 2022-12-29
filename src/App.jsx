@@ -37,8 +37,6 @@ function App() {
                 studentList={studentList}
                 setStudentList={setStudentList}
               />
-
-
             </div>
         </div>
     </div>

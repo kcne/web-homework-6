@@ -8,44 +8,50 @@ import EditModal from "../modals/EditModal";
 import ViewModal from "../modals/ViewModal";
 import DeleteModal from "../modals/DeleteModal";
 
-const  StudentTable=({studentList, currentPage, numItemsPerPage,setStudentList} )=> {
+const  StudentTable=({studentList,setStudentList} )=> {
+
+    //pagination
     const [currPage, setPage] = useState(1);
     const [numberOfItemsPP,setNumItemsPP] = useState(8);
-    
-
     const lastItemIndex=currPage*numberOfItemsPP;
     const firstItemIndex=lastItemIndex-numberOfItemsPP;
     const currentItems=studentList.slice(firstItemIndex, lastItemIndex);
-
+    //modal states
     const [editModalShow, setEditModalShow] = useState(false);
     const [viewModalShow, setViewModalShow] = useState(false);
     const [deleteModalShow, setDeleteModalShow] = useState(false);
    
+    //modal triggers
     const [count, setCount] = useState(0);
+
     
+
     const [editStudent, setEditStudent] = useState({});
     const [viewStudent, setViewStudent] = useState({});
     const [deleteStudent, setDeleteStudent] = useState({}); 
 
+    const [editTrigger, setEditTrigger] = useState(0);
+    const [viewTrigger, setViewTrigger] = useState(0);
+    const [deleteTrigger, setDeleteTrigger] = useState(0);
 
     useEffect(() => {
         if(count)
         setEditModalShow(true);
         setCount(count+1);
-    }, [editStudent]);
+
+    }, [editStudent, editTrigger]);
 
     useEffect(() => {
         if(count)
         setViewModalShow(true);
         setCount(count+1);
-    }, [viewStudent]);
+    }, [viewStudent,viewTrigger]);
 
     useEffect(() => {
         if(count)
         setDeleteModalShow(true);
         setCount(count+1);
-    }, [deleteStudent]);
-
+    }, [deleteStudent,deleteTrigger]);
 
     function getDepartment(dept){
         switch(dept){
@@ -78,9 +84,9 @@ const  StudentTable=({studentList, currentPage, numItemsPerPage,setStudentList} 
                         <td className="stud-id-col">{student.num}</td>
                         <td className="dep-col">{ getDepartment(parseInt(student.dept))}</td>
                         <td className="btns-col button-row d-flex gap-1">
-                            <button value={student} className="btn btn-primary btn-sm" onClick={(e)=>{setEditStudent(student)}}>Düzenle</button>
-                            <button value={student} className="btn btn-danger btn-sm" onClick={(e)=>{setDeleteStudent(student)}}>Sil</button>
-                            <button value={student} className="btn btn-success btn-sm" onClick={(e)=>{setViewStudent(student)}}>Yetkiler</button>
+                            <button id="edit" value={student} className="btn btn-primary btn-sm" onClick={(e)=>{setEditStudent(student); setEditTrigger(editTrigger+1)}}>Düzenle</button>
+                            <button id="delete" value={student} className="btn btn-danger btn-sm" onClick={(e)=>{setDeleteStudent(student); setDeleteTrigger(deleteTrigger+1)}}>Sil</button>
+                            <button id="view" value={student} className="btn btn-success btn-sm" onClick={(e)=>{setViewStudent(student);setViewTrigger(viewTrigger+1)}}>Yetkiler</button>
                         </td>
                     </tr>
                     ))} 
